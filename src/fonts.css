@@ -1,0 +1,48 @@
+:root {
+  --font-tuppence: "tuppence", serif; 
+  --font-weight-medium: 400;
+  --font-weight-semibold: 600;
+}
+
+html {
+  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+  font-family: var(--montserrat);
+}
+
+h1, .h1 {
+  font-family: "tuppence", serif;
+  font-weight: var(--font-weight-semibold);
+  font-style: italic;
+  font-size: 56px;
+  margin-bottom: 12px;
+}
+
+h2, .h2 {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 26px;
+  margin-bottom: 48px;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  line-height: 36px;
+}
+
+/* h2, .h2 {
+
+}
+font-family: "tuppence", serif;
+font-weight: 400;
+font-style: italic;
+
+font-family: "tuppence", serif;
+font-weight: 600;
+font-style: normal;
+
+font-family: "tuppence", serif;
+font-weight: 600;
+font-style: italic; */
