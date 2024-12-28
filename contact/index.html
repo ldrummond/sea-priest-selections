@@ -34,48 +34,47 @@
   </head>
   <body>
     <div id="app">
-      <div class="hero">
-        <video id="hero__video" src="./waves.mp4" autoplay muted loop playsinline width="100%" height="100%"></video>
-        <div class="hero__text">
-          <h1 class="hero__name">Sea Priest <span class="hero__selections">Selections</span></h1>
-          <h1 class="hero__name-japanese">シー・プリースト・セレクションス</h1>
-        </div>
-      </div>
       <div id="main">
-        <section class="section--map">
+        <section class="section--contact">
           <div class="section__inner section__inner--grid">
-            <div class="map__text">
-              <h2>Japanese Wine Imports</h2>
-              <h3>Pouring in California</h3>
-              <p><img class="icon--waves" src="./icon--waves.svg">Sea Priest Selections is a wine import company aiming to connect the people and the stories of Japanese wine across the Pacific to California. With an equal emphasis on the leading edge and the established paradigm, we hope to present a diverse showcase of the craftsmanship and care of Japan's winemakers to a California market that is still in the dark. 
-                Our mission is to introduce California restaurants, retailers, and enthusiasts to the delicate nuances and innovative styles of Japanese wines, fostering a lasting relationship between these two cultures on the cutting edge of the global wine scene.
-              </p>
-            </div>
-            <div class="map__image">
-              <img src="./japan-map.svg">
-            </div>
-          </div>
-        </section>
-        <section class="section--columns">
-          <div class="columns__bg"></div>
-          <div class="section__inner section__inner--grid">
-            <div class="columns__column">
-              <div class="columns__column-image">
-                <img src="icon--waves-white.png" />
-              </div>
-              <h3 class="h3--alt">Regenerative Oriented</h3>
+            <div class="contact__content">
+              <h1>Contact Us</h1>
+              <br>
               <p>
-                We celebrate the birth of new traditions, while respecting old ones, highlighting sustainability, a connection to the land, and transparent winemaking that conveys a sense of place. While avoiding dogma, we hope to lift up producers taking the tougher, more arduous route, eschewing industrial convenience for regenerative methodologies for the benefit of the soil and the clarity of the final product. 
+                We are a new company and interested in meeting potential partners as we grow. If you are interested in collaborating with us, whether you are a producer or a prospective buyer, please reach out to <a href="mailto:jake@seapriestselections.com">jake@seapriestselections.com</a>
               </p>
-            </div>
-            <div class="columns__column">
-              <div class="columns__column-image">
-                <img src="icon--waves-single-white.png" />
-              </div>
-              <h3 class="h3--alt">Low Intervention</h3>
-              <p>
-                We understand that many factors go into producing a sustainable winegrowing ecosystem, and we strive to feature the work of those choosing chemical free practices in the vineyard and cellar wherever possible. We believe that this philosophy allows for each bottle of wine to arrive with the consumer with the utmost care, preserving its story of terroir and those who brought it to life.
-              </p>
+              <form 
+                id="contact-form"
+                name="contact" 
+                netlify-honeypot="work-address"
+                netlify
+              >
+                <div class="form-field">
+                  <label>
+                    Name
+                    <input type="text" name="name" autocomplete="name" required />
+                  </label>
+                </div>
+                <div class="form-field">
+                  <label>
+                    Email
+                    <input type="text" name="email" autocomplete="email" required />
+                  </label>
+                </div>
+                <div class="form-field special-field">
+                  <label>
+                    Work Address
+                    <input type="text" name="work-address" autocomplete="none" tabindex="-1" />
+                  </label>
+                </div>
+                <div class="form-field">
+                  <label>
+                    Message
+                    <textarea name="message" autocomplete="email" required></textarea>
+                  </label>
+                </div>
+                <button class="btn btn--primary" type="submit">Submit</button>
+              </form>
             </div>
           </div>
         </section>
@@ -89,7 +88,6 @@
               <a href="mailto:info@seapriestselections.com" rel="noopener"><img class="icon" src="./icon--mail.svg">info@seapriestselections.com</p>
               <a href="https://instagram.com"><img class="icon" src="./icon--instagram.svg">@seapriestselections</p>
             </div>
-            <!-- <img class="footer__waves" src="./footer-waves.svg" />  -->
           </div>
         </footer>
       </div>

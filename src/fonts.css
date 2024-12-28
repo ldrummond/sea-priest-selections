@@ -1,5 +1,6 @@
 :root {
   --font-tuppence: "tuppence", serif; 
+  --font-montserrat: "Montserrat", serif; 
   --font-weight-medium: 400;
   --font-weight-semibold: 600;
 }
@@ -11,26 +12,75 @@ html {
 }
 
 h1, .h1 {
-  font-family: "tuppence", serif;
+  font-family: var(--font-tuppence);
   font-weight: var(--font-weight-semibold);
   font-style: italic;
-  font-size: 56px;
-  margin-bottom: 12px;
+  font-size: 30px;
 }
 
 h2, .h2 {
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 26px;
-  margin-bottom: 48px;
+  font-family: var(--font-tuppence);
+  font-size: 30px;
 }
 
-p {
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
-  line-height: 36px;
+h3, .h3 {
+  font-family: var(--font-montserrat);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 18px;
 }
+
+.h3--alt {
+  font-family: var(--font-tuppence);
+}
+
+body, p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+/* Tablet */
+@media only screen and (min-width: 767px) {
+  h1, .h1 {
+    font-size: 40px;
+  }
+  
+  h2, .h2 {
+    font-size: 38px;
+  }
+
+  h3, .h3 {
+    font-size: 22px;
+  }
+
+  body, p {
+    font-size: 17px;
+    line-height: 34px;
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1280px) {
+  h1, .h1 {
+    font-size: 56px;
+  }
+
+  h2, .h2 {
+    font-size: 50px;
+  }
+
+  h3, .h3 {
+    font-size: 25px;
+  }
+
+  body, p {
+    font-size: 18px;
+    line-height: 36px;
+  }
+}
+
+
 
 /* h2, .h2 {
 
