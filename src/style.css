@@ -85,7 +85,8 @@ img {
   width: 100%;
   height: calc(90 * var(--vh-unit));
   overflow: hidden;
-  position: sticky;
+  /* position: sticky; */
+  position: relative;
   top: 0px;
 
   video {
