@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
                contact_form_success_message.style.opacity = '1'; 
             })
             .catch(() => {
-               console.log(error);
                contact_form_submit_el.disabled = false;
                contact_form_submit_el.textContent = 'Submit';
                contact_form_error_message.style.opacity = '1'; 
