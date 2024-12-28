@@ -298,7 +298,8 @@ img {
   background-image: url('/noise-texture-tinified.png');
   opacity: 0.2;
   animation: animateGrain 8s steps(10) infinite;
-  mix-blend-mode: color-burn;
+  mix-blend-mode: hard-light;
+  /* mix-blend-mode: color-burn; */
   pointer-events: none;
   z-index: 15;
 }
