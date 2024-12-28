@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
             body: new URLSearchParams(form_data).toString()
          })
 
-         Promise.allSettled([delay, submit_request])
+         Promise.all([delay, submit_request])
             .then(() => {
                contact_form_submit_el.textContent = 'Success';
                contact_form_success_message.style.opacity = '1'; 
