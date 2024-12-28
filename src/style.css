@@ -48,6 +48,22 @@ p a {
   padding: 8px 0px;
 }
 
+.btn--secondary {
+  color: #FAFAFA;
+  background-color: var(--green);
+  padding: 9px 17px 13px 17px;
+  border: 2px solid var(--green);
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.btn--secondary:hover {
+  background-color: var(--sage);
+  color: var(--green);
+}
+
 .btn:focus {
   outline-color: var(--green);
 }
@@ -79,6 +95,105 @@ img {
   max-width: 1440px;
   padding: 64px 14px;
   margin: auto;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 14px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #FAFAFA;
+  background-image: url('/header--waves.jpg');
+  position: relative;
+  background-size: cover;
+  overflow: hidden;
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(1.1) contrast(0.8);
+    z-index: 0;
+  }
+}
+
+.header::before {
+  content:"";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #190f03;
+  z-index: 5;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  /* display: none; */
+}
+
+.header::after {
+  content:"";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image: url('/noise-texture-tinified.png');
+  opacity: 0.2;
+  animation: animateGrain 8s steps(10) infinite;
+  mix-blend-mode: color-burn;
+  pointer-events: none;
+  z-index: 15;
+}
+.header__inner {
+  position: relative;
+}
+
+.header__back-arrow {
+  display: block;
+  margin-top: 6px;
+  width: 40px;
+}
+
+.header__name {
+  font-family: var(--font-tuppence);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 25px;
+  letter-spacing: 0.03em;
+}
+
+.header__name--sp {
+  display: block;
+  width: 100%;
+}
+
+.header__name--selections {
+  font-family: var(--font-montserrat);
+  color: transparent;
+  -webkit-text-stroke: 1px var(--black);
+  text-stroke: 1px var(--black);
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+}
+
+.header__name--japanese {
+  display: block;
+  width: 100%;
+  font-size: 20.7px;
+  color: transparent;
+  background-image: url('/name-japanese-navigation.png');
+  background-size: contain;
+  background-position: left center;
+  background-repeat: no-repeat;
 }
 
 .hero {
@@ -166,7 +281,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #1a1105;
+  background-color: #190f03;
   z-index: 15;
   mix-blend-mode: screen;
   pointer-events: none;
@@ -178,8 +293,8 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%;
-  height: 200%;
+  width: 150%;
+  height: 150%;
   background-image: url('/noise-texture-tinified.png');
   opacity: 0.2;
   animation: animateGrain 8s steps(10) infinite;
@@ -292,6 +407,7 @@ img {
 .section--contact {
   overflow: hidden;
   position: relative;
+  padding-top: 20px;
 }
 
 .section--contact::before {
@@ -311,6 +427,10 @@ img {
 
 .contact__content {
   width: 100%;
+
+  h1 {
+    margin-bottom: 12px;
+  }
 }
 
 /* Change the white to any color */
@@ -322,7 +442,7 @@ input:-webkit-autofill:active{
 }
 
 #contact-form {
-  margin-top: 24px;
+  margin-top: 32px;
   position: relative;
 
   input, textarea {
@@ -333,7 +453,8 @@ input:-webkit-autofill:active{
     padding: 12px 8px;
     color: var(--brown);
     border: none;
-    background-color: #abb4a9;
+    border-radius: 2px;
+    background-color: #cdd0c7;
     outline-color: var(--green);
     font-size: inherit;
     font-family: inherit;
@@ -365,6 +486,20 @@ input:-webkit-autofill:active{
     width: 0px;
     height: 0px;
     overflow: hidden;
+  }
+
+  .form-message__wrapper {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-columns: auto;
+
+    > * {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
+      opacity: 0;
+      transition: opacity 333ms ease;
+    }
   }
 }
 
@@ -404,6 +539,35 @@ input:-webkit-autofill:active{
 }
 
 @media only screen and (min-width: 767px) {
+  .header {
+    padding: 12px 36px;
+  }
+
+  .header__inner {
+    width: 100%;
+    display: flex;
+  }
+
+  .header__back-arrow {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    translate: 0 -50%;
+    margin-top: 8px;
+  }
+
+  .header__name {
+    width: 385px;
+    align-items: center;
+    margin: auto;
+    font-size: 28px;
+  }
+
+  .header__name--japanese {
+    
+    /* background-image: url('/name-japanese-mobile.png'); */
+  }
+
   .section__inner {
     padding: 84px 36px;
   }
@@ -411,7 +575,7 @@ input:-webkit-autofill:active{
   .section__inner--grid {
     display: grid;
     grid-template-columns: repeat(11, minmax(0, 1fr));
-    align-items: center;
+    /* align-items: center; */
     gap: 24px;
   }
   
@@ -437,6 +601,7 @@ input:-webkit-autofill:active{
 
   .map__text {
     grid-column: 1 / span 6;
+    padding-top: 32px;
   
     .icon--waves {
       width: 90px;
@@ -444,7 +609,7 @@ input:-webkit-autofill:active{
     }
 
     h2 {
-      margin-bottom: 18px;
+      margin-bottom: 22px;
     }
 
     h3 {
@@ -472,16 +637,20 @@ input:-webkit-autofill:active{
     grid-column: 7 / span 5;
   }
 
-  .contact__content {
-    grid-column: 1 / span 7;
+  .section--contact {
+    padding-top: 60px;
   }
 
+  .contact__content {
+    grid-column: 1 / span 9;
+  }
+  
   #footer {
     background-size: 50%;
     background-position: left 101%;
     text-align: left;
-    padding-top: 80px;
-    padding-bottom: 120px;
+    padding-top: 20px;
+    padding-bottom: 110px;
   }
 
   .footer__contact-btn {
@@ -503,7 +672,7 @@ input:-webkit-autofill:active{
   }
 
   .hero {
-    height: calc(100 * var(--vh-unit));
+    height: calc(80 * var(--vh-unit));
   }
 
   .hero__name {
@@ -513,5 +682,13 @@ input:-webkit-autofill:active{
   .hero__name-japanese {
     background-image: url('/name-japanese.png');  
     font-size: 5.7vw;
+  }
+
+  .section--contact {
+    padding-top: 70px;
+  }
+
+  .contact__content {
+    grid-column: 1 / span 7;
   }
 }
