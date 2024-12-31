@@ -49,14 +49,18 @@ document.addEventListener("DOMContentLoaded", () => {
 // https://gist.github.com/getify/150ea5a3b30b8822dee7798883d120b9
 function computeViewportDimensions() {
    if (document.documentElement && document.documentElement.style && document.documentElement.style.setProperty) {
-      document.documentElement.style.setProperty(
-         "--vw-unit",
-         (document.documentElement.clientWidth / 100).toFixed(1) + "px"
-      );
-      document.documentElement.style.setProperty(
-         "--vh-unit",
-         (document.documentElement.clientHeight / 100).toFixed(1) + "px"
-      );
+      const client_width = document.documentElement.clientWidth;
+      if(client_width !== window._client_width) {
+         window._client_width = client_width;
+         document.documentElement.style.setProperty(
+            "--vw-unit",
+            (document.documentElement.clientWidth / 100).toFixed(1) + "px"
+         );
+         document.documentElement.style.setProperty(
+            "--vh-unit",
+            (document.documentElement.clientHeight / 100).toFixed(1) + "px"
+         );
+      }
    }
 }
 
