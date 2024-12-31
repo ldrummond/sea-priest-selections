@@ -234,6 +234,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-align: center;
   z-index: 5;
 }
 
@@ -674,6 +675,10 @@ input:-webkit-autofill:active{
 
   .hero {
     height: calc(80 * var(--vh-unit));
+  }
+
+  .hero__text {
+    text-align: left;
   }
 
   .hero__name {

@@ -4,43 +4,44 @@ import './style.css'
 
 document.addEventListener("DOMContentLoaded", () => {
    const contact_form_el = document.getElementById("contact-form");
-   const contact_form_success_message = contact_form_el.querySelector(".form-message.--success");
-   const contact_form_error_message = contact_form_el.querySelector(".form-message.--error");
-   const contact_form_submit_el = contact_form_el.querySelector("button[type='submit']");
-   console.log(contact_form_el, contact_form_success_message, contact_form_error_message, contact_form_submit_el);
-
-   contact_form_el.addEventListener("focusin", () => {
-      contact_form_success_message.style.opacity = '0';
-      contact_form_error_message.style.opacity = '0';
-   })
-
    if(contact_form_el) {
-      contact_form_el.addEventListener("submit", (e) => {
-         e.preventDefault();
-         const form_data = new FormData(contact_form_el);
+      const contact_form_success_message = contact_form_el.querySelector(".form-message.--success");
+      const contact_form_error_message = contact_form_el.querySelector(".form-message.--error");
+      const contact_form_submit_el = contact_form_el.querySelector("button[type='submit']");
+      
+      contact_form_el.addEventListener("focusin", () => {
          contact_form_success_message.style.opacity = '0';
          contact_form_error_message.style.opacity = '0';
-         contact_form_submit_el.textContent = 'Processing';
-         contact_form_submit_el.disabled = true;
-
-         const delay = new Promise((res, rej) => setTimeout(res, 2000));
-         const submit_request = fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(form_data).toString()
-         })
-
-         Promise.all([delay, submit_request])
-            .then(() => {
-               contact_form_submit_el.textContent = 'Success';
-               contact_form_success_message.style.opacity = '1'; 
+      })
+      
+      if(contact_form_el) {
+         contact_form_el.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const form_data = new FormData(contact_form_el);
+            contact_form_success_message.style.opacity = '0';
+            contact_form_error_message.style.opacity = '0';
+            contact_form_submit_el.textContent = 'Processing';
+            contact_form_submit_el.disabled = true;
+      
+            const delay = new Promise((res, rej) => setTimeout(res, 2000));
+            const submit_request = fetch("/", {
+               method: "POST",
+               headers: { "Content-Type": "application/x-www-form-urlencoded" },
+               body: new URLSearchParams(form_data).toString()
             })
-            .catch(() => {
-               contact_form_submit_el.disabled = false;
-               contact_form_submit_el.textContent = 'Submit';
-               contact_form_error_message.style.opacity = '1'; 
-            });
-      });
+      
+            Promise.all([delay, submit_request])
+               .then(() => {
+                  contact_form_submit_el.textContent = 'Success';
+                  contact_form_success_message.style.opacity = '1'; 
+               })
+               .catch(() => {
+                  contact_form_submit_el.disabled = false;
+                  contact_form_submit_el.textContent = 'Submit';
+                  contact_form_error_message.style.opacity = '1'; 
+               });
+         });
+      }
    }
 });
 
