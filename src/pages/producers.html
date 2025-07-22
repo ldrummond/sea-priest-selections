@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  {{> 'head'}}
+  <body>
+    {{> 'primary-nav'}}
+    <div id="main">
+      <section class="section--contact">
+        <div class="section__inner section__inner--grid">
+          <div class="contact__content">
+            <h1>Contact Us</h1>
+            <br>
+            <p>
+              We are a new company and interested in meeting potential partners as we grow. If you are interested in collaborating with us, whether you are a producer or a prospective buyer, please reach out to <a href="mailto:jake@seapriestselections.com">jake@seapriestselections.com</a>
+            </p>
+            <form 
+              id="contact-form"
+              name="contact" 
+              data-netlify="true"
+              netlify-honeypot="work-address"
+              netlify
+            >
+              <div class="form-field">
+                <label>
+                  Name
+                  <input type="text" name="name" autocomplete="name" required />
+                </label>
+              </div>
+              <div class="form-field">
+                <label>
+                  Email
+                  <input type="text" name="email" autocomplete="email" required />
+                </label>
+              </div>
+              <div class="form-field special-field">
+                <label>
+                  Work Address
+                  <input type="text" name="work-address" autocomplete="none" tabindex="-1" />
+                </label>
+              </div>
+              <div class="form-field">
+                <label>
+                  Message
+                  <textarea name="message" autocomplete="email" required></textarea>
+                </label>
+              </div>
+              <button class="btn btn--secondary" type="submit">Submit</button>
+              <div class="form-message__wrapper">
+                <p class="form-message --success">Your message was received! Thank you for contacting us; we will follow up as soon as possible.</p>
+                <p class="form-message --error">An unknown error occurred. Please try again, or contact us via email at <a href="mailto:jake@seapriestselections.com">jake@seapriestselections.com</a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      {{> 'footer'}}
+    </div>
+    <script type="module" src="../scripts/main.js"></script>
+  </body>
+</html>

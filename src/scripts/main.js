@@ -1,8 +1,16 @@
-import './style.css'
-
 "use strict";
+import '../styles/index.css';
 
 document.addEventListener("DOMContentLoaded", () => {
+   // Add Scroll class to main
+   window.addEventListener("scroll", () => {
+      const y_offset = window.pageYOffset;
+      const threshold = 20;
+      const has_scrolled = y_offset > threshold;
+      document.body.classList.toggle("--has-scrolled", has_scrolled);
+   });
+
+   // Load Contact Form
    const contact_form_el = document.getElementById("contact-form");
    if(contact_form_el) {
       const contact_form_success_message = contact_form_el.querySelector(".form-message.--success");
@@ -23,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
             contact_form_submit_el.textContent = 'Processing';
             contact_form_submit_el.disabled = true;
       
-            const delay = new Promise((res, rej) => setTimeout(res, 2000));
+            const delay = new Promise((res) => setTimeout(res, 2000));
             const submit_request = fetch("/", {
                method: "POST",
                headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -44,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
    }
 });
-
 
 // https://gist.github.com/getify/150ea5a3b30b8822dee7798883d120b9
 function computeViewportDimensions() {
