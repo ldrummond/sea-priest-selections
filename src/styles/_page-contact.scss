@@ -1,0 +1,119 @@
+
+.section--contact {
+  overflow: hidden;
+  position: relative;
+  padding-top: 20px;
+}
+
+.section--contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/background--thick-wave.png');
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.contact__content {
+  width: 100%;
+
+  h1 {
+    margin-bottom: 12px;
+  }
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px #abb4a9 inset !important;
+}
+
+#contact-form {
+  margin-top: 32px;
+  position: relative;
+
+  input, textarea {
+    display: block;
+    margin-top: 12p;
+    margin-bottom: 24px;
+    width: 100%;
+    padding: 12px 8px;
+    color: var(--brown);
+    border: none;
+    border-radius: 2px;
+    background-color: #cdd0c7;
+    outline-color: var(--green);
+    font-size: inherit;
+    font-family: inherit;
+  }
+
+  textarea {
+    min-height: 180px;
+  }
+
+  button[type='submit'] {
+    background-color: var(--green);
+    color: #FAFAFA;
+    padding: 9px 17px 13px 17px;
+    border: 2px solid var(--green);
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+    transition: background-color 150ms ease, color 150ms ease;
+  }
+
+  button[type='submit']:hover {
+    background-color: var(--sage);
+    color: var(--green);
+  }
+
+  .special-field {
+    pointer-events: none;
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+  }
+
+  .form-message__wrapper {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-columns: auto;
+
+    > * {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
+      opacity: 0;
+      transition: opacity 333ms ease;
+    }
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .section--contact {
+    padding-top: 40px;
+  }
+
+  .contact__content {
+    grid-column: 1 / span 9;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .section--contact {
+    padding-top: 50px;
+  }
+
+  .contact__content {
+    grid-column: 1 / span 7;
+  }
+}

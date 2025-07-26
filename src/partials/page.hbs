@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+  {{> 'head'}}
+  <body class="page--{{page.slug}}">
+    {{> 'primary-nav'}}
+    <div id="main">
+      {{> @partial-block }}
+      {{> 'footer'}}
+    </div>
+    <script type="module" src='{{resolve-from-root "src/scripts/main.js"}}'></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<header class="primary-nav">
+  <div href="/" class="primary-nav__inner">
+    <a class="primary-nav__logo" href="/">
+      {{> 'sps-logo-wide'}}
+    </a>
+    <div class="primary-nav__links">
+      {{#each site.routes}}
+        <a class="btn--text" href="/{{slug}}">{{name}}</a>
+      {{/each}}
+    </div>
+  </div>
+</header>

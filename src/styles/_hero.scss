@@ -1,0 +1,149 @@
+
+.hero {
+  width: 100%;
+  height: calc(90 * var(--vh-unit));
+  overflow: hidden;
+  /* position: sticky; */
+  position: relative;
+  top: 0px;
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* filter: brightness(0.9) contrast(1.2); */
+  }
+
+  svg {
+    width: 800px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    fill: #2B241A;
+  }
+}
+
+.hero__text {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  z-index: 5;
+}
+
+.hero__name {
+  font-size: inherit;
+  text-transform: uppercase;
+  font-style: initial;
+  line-height: 0.8em;
+  font-size: 14vw;
+  line-height: 1em;
+  color: var(--black);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.hero__selections {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--black);
+  text-stroke: 2px var(--black);
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+}
+
+.hero__name-japanese {
+  color: transparent;
+  text-align: right;
+  background-image: url('/name-japanese-mobile.png');  
+  background-size: contain;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  font-size: inherit;
+  font-size: 14vw;
+  line-height: 1em;
+  letter-spacing: 0.01em;
+  display: inline-block;
+  margin: 0;
+  margin-left: auto;
+}
+
+.hero::before {
+  content:"";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #190f03;
+  z-index: 15;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.hero::after {
+  content:"";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 150%;
+  background-image: url('/noise-texture-tinified.png');
+  opacity: 0.1;
+  /* animation: animateGrain 8s steps(10) infinite; */
+  mix-blend-mode: hard-light;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media only screen and (min-width: 767px) {
+  .hero {
+    height: calc(80 * var(--vh-unit));
+  }
+
+  .hero__text {
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 45px;
+  }
+
+  .hero__name {
+    font-size: 6.9vw;
+  }
+
+  .hero__name-japanese {
+    background-image: url('/name-japanese.png');  
+    font-size: 9vw;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .hero {
+    height: calc(80 * var(--vh-unit));
+  }
+
+  .hero__text {
+    text-align: left;
+  }
+
+  .hero__name {
+    font-size: 5.7vw;
+  }
+
+  .hero__name-japanese {
+    background-image: url('/name-japanese.png');  
+    font-size: 5.7vw;
+  }
+}

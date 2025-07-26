@@ -1,7 +1,18 @@
 "use strict";
-import '../styles/index.css';
+import '../styles/index.scss';
 
 document.addEventListener("DOMContentLoaded", () => {
+   // Add scroll links
+   Array.from(document.querySelectorAll("[href^='#']")).forEach(btn => btn.addEventListener("click", (e) => {
+      try {
+         const target_selector = e.currentTarget.getAttribute('href');
+         const target = document.querySelector(target_selector);
+         target.scrollIntoView({behavior: 'smooth'});
+      } catch (error) {
+         console.warn(error)
+      }
+   }));
+
    // Add Scroll class to main
    window.addEventListener("scroll", () => {
       const y_offset = window.pageYOffset;
@@ -9,6 +20,33 @@ document.addEventListener("DOMContentLoaded", () => {
       const has_scrolled = y_offset > threshold;
       document.body.classList.toggle("--has-scrolled", has_scrolled);
    });
+
+   // Read More Button
+   const truncated_paragaphs = document.querySelectorAll(".truncated-paragraph");
+   function truncateParagraphs() {
+      truncated_paragaphs.forEach(p_el => {
+         let text_el = p_el.querySelector('.truncated-paragraph__text');
+         const btn_el = p_el.querySelector('.truncated-paragraph__btn');
+         if(!(text_el && btn_el)) throw new Error("Truncated paragraph is missing elements");
+         text_el.style.height = '0px';
+         btn_el.addEventListener('click', () => {
+            text_el = p_el.querySelector('.truncated-paragraph__text');
+            const is_expanded = text_el.style.height !== '0px';
+            if(!is_expanded) {
+               text_el.style.height = text_el.scrollHeight + 'px';
+               btn_el.textContent = 'Read Less';
+            }
+            else {
+               text_el.style.height = '0px';
+               btn_el.textContent = 'Read More';
+               // setTimeout(() =>{
+               //    p_el.scrollIntoView({behavior: 'smooth', block: 'end'});
+               // }, 111)
+            }
+         });
+      });
+   }
+   truncateParagraphs();
 
    // Load Contact Form
    const contact_form_el = document.getElementById("contact-form");

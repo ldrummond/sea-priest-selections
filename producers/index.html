@@ -1,0 +1,65 @@
+{{#> 'page'}}
+ <div class="section--producers-heading">
+    <div class="section__inner">
+      <div class="producers__heading">
+        <img class="icon--waves" width="60px" src="/icon--waves-curled.svg">
+        <h1 class="h2">Producers</h1>
+      </div>
+      <div class="btn-group">
+        {{#each site.producers}}
+          <a class="btn--simple" href="#section-{{slug}}">{{name}}</a>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  {{#each site.producers}}
+  <section class="section--producers" id="section-{{slug}}">
+    <div class="section__inner section__inner--grid">
+      <div class="producers__bg"></div>
+      <div class="producers__images">
+         {{#each images}}
+          <img src="{{this}}" />
+        {{/each}}
+        <div class="producers__quote">
+          <img src="{{quote_image}}" />
+          <div>
+            <p class="producers__quote-text"><q><i>{{quote}}</i></q></p>
+            <p>
+              <strong>{{quote_attr}}</strong><br>
+              {{name}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="producers__content">
+        <h3 class="producers__name h1"><i>{{name}}</i></h3>
+        <p class="producers__region h3 h3--alt">{{region}}</p>
+        <div class="producers__text">
+          <p>{{short_description}}</p>
+          <div class="truncated-paragraph">
+            <p class="truncated-paragraph__text">
+              {{long_description}}
+            </p>
+            <button class="truncated-paragraph__btn btn--text">Read More</button>
+          </div>
+        </div>
+        <div class="producers__wines">
+          <p class="h3 h3--alt">Wines <a href="{{tech_sheet}}" rel="noopener" target="_blank">Tech Sheets
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" fill="none" viewBox="0 0 15 15">
+              <path fill="#2B241A" d="M13 8.3V13a1.6 1.6 0 0 1-1.5 1.6H2A1.6 1.6 0 0 1 .4 13V3.5A1.6 1.6 0 0 1 2 2h4.7v1.5H2V13h9.5V8.3H13ZM8.3.3V2h3.6L5.8 8l1 1.1 6.2-6v3.6h1.6V.4H8.3Z"/>
+            </svg>
+          </a></p>
+          <ul>
+            {{#each wines}}
+              <li>
+                {{name}}
+                <span>{{year}}</span>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{/each}}
+{{/ 'page'}}
