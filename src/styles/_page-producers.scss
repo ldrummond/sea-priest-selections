@@ -62,6 +62,11 @@
     margin-bottom: 32px;
   }
 
+  .truncated-paragraph__text {
+    white-space: pre-line;
+    margin-bottom: 12px;
+  }
+
   .producers__bg {
     position: absolute;
     top: 40%;
