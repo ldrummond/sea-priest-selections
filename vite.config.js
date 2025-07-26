@@ -23,6 +23,7 @@ const build = {
   outDir: "dist",
   rollupOptions: {
     input: {
+      index: resolve(__dirname, 'index.html'),
       contact: resolve(__dirname, 'contact', 'index.html'),
       producers: resolve(__dirname,  'producers', 'index.html'),
     },
