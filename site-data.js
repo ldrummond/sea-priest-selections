@@ -30,15 +30,15 @@ Fattoria AL FIORE is guided by the belief that people with shared values can com
         'fattoria-landscape.jpg',
       ],
       wines: [
-        { name: 'Alulu', year: 2023},
-        { name: 'Arancia', year: 2023},
-        { name: 'Piacere!', year: 2023},
-        { name: 'Ciao!Ciao!', year: 2022},
-        { name: 'Mille FIORE', year: 2023},
-        { name: 'momo', year: 2023},
-        { name: 'OFB', year: 2023},
-        { name: 'POS', year: 2023},
-        { name: 'Verde', year: 2022},
+        { name: 'Alulu', tech_sheet: 'FAF_Alulu.pdf', year: 2023},
+        { name: 'Arancia', tech_sheet: 'FAF_Arancia.pdf', year: 2023},
+        { name: 'Piacere!', tech_sheet: 'FAF_Piacere!.pdf', year: 2023},
+        { name: 'Ciao!Ciao!', tech_sheet: 'FAF_Ciao!Ciao!.pdf', year: 2022},
+        { name: 'Mille FIORE', tech_sheet: 'FAF_Mille_FIORE.pdf', year: 2023},
+        { name: 'momo', tech_sheet: 'FAF_Momo.pdf', year: 2023},
+        { name: 'OFB', tech_sheet: 'FAF_OFB.pdf', year: 2023},
+        { name: 'POS', tech_sheet: 'FAF_POS.pdf', year: 2023},
+        { name: 'Verde', tech_sheet: 'FAF_Verde.pdf', year: 2022},
       ]
     },
     {
@@ -61,11 +61,11 @@ The wines themselves reflect the trademarks of Nakajima’s career – all nativ
         'nakajima-landscape.jpg',
       ],
        wines: [
-        {name: 'Pétillant Blanc', year: 2024},
-        {name: 'Pétillant Rosé', year: 2024},
-        {name: 'Chenin Blanc/Sauvignon Blanc', year: 2023},
-        {name: 'Merlot', year: 2023},
-        {name: 'Cabernet Franc', year: 2023},
+        {name: 'Pétillant Blanc', tech_sheet: 'DN_Petillant_Blanc.pdf', year: 2024},
+        {name: 'Pétillant Rosé', tech_sheet: 'DN_Petillant_rose.pdf', year: 2024},
+        {name: 'Chenin Blanc/Sauvignon Blanc', tech_sheet: 'DN_Chenin_Sauvignon_Blanc.pdf', year: 2023},
+        {name: 'Merlot', tech_sheet: 'DN_Merlot.pdf', year: 2023},
+        {name: 'Cabernet Franc', tech_sheet: 'DN_Cabernet_Franc.pdf', year: 2023},
       ]
     },
     {
@@ -88,7 +88,7 @@ Tamura’s daughter, Moe Ozono, tasted her father’s wine after the first relea
         'tomorrow-landscape.jpg',
       ],
       wines: [
-        {name: 'Onoyama Bikki Rouge', year: 2021},
+        {name: 'Onoyama Bikki Rouge', tech_sheet: 'TW_Onoyama_Bikki_rouge.pdf', year: 2021},
       ]
     },
   ],
