@@ -64,8 +64,8 @@ The wines themselves reflect the trademarks of Nakajima’s career – all nativ
         {name: 'Pétillant Blanc', tech_sheet: 'DN_Petillant_Blanc.pdf', year: 2024},
         {name: 'Pétillant Rosé', tech_sheet: 'DN_Petillant_rose.pdf', year: 2024},
         {name: 'Chenin Blanc/Sauvignon Blanc', tech_sheet: 'DN_Chenin_Sauvignon_Blanc.pdf', year: 2023},
-        {name: 'Merlot', tech_sheet: 'DN_Merlot.pdf', year: 2023},
         {name: 'Cabernet Franc', tech_sheet: 'DN_Cabernet_Franc.pdf', year: 2023},
+        {name: 'Merlot', tech_sheet: 'DN_Merlot.pdf', year: 2023},
       ]
     },
     {
